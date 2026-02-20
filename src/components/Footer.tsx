@@ -12,8 +12,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <a href="#home" className="flex items-center gap-3 font-display text-2xl font-bold tracking-tight">
-              <img src="/logo.png" alt="Azpax Logo" className="h-14 w-auto object-contain" />
-              <span className="text-foreground">Azpax</span>
+              <img src="/logo.png" alt="Azpax Logo" className="h-24 md:h-28 w-auto object-contain scale-125 transform origin-left" />
             </a>
             <p className="text-muted-foreground text-sm mt-3 leading-relaxed">
               Where Digital Meets Precision

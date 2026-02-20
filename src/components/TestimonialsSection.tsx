@@ -13,7 +13,7 @@ const TestimonialsSection = () => {
                 High standards.
               </h2>
               <p className="text-white/60 text-lg leading-relaxed">
-                We don't offhore. We don't cut corners. We treat your project like it's our own business. The art of shaping content, precision in code, and aesthetic functional design.
+                We don't offshore. We don't cut corners. We treat your project like it's our own business. The art of shaping content, precision in code, and aesthetic functional design.
               </p>
             </div>
 

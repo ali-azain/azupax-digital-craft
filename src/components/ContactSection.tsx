@@ -7,7 +7,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 import { Send, Loader2 } from "lucide-react";
 
 const contactSchema = z.object({
@@ -50,14 +49,31 @@ const ContactSection = () => {
 
     setLoading(true);
     try {
-      const { error } = await supabase.functions.invoke("contact-form", {
-        body: result.data,
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "c3e4d1f9-3595-4d00-9b12-35ae83f3be4b",
+          name: result.data.name,
+          email: result.data.email,
+          service: result.data.service,
+          message: result.data.message,
+        }),
       });
-      if (error) throw error;
+
+      const json = await response.json();
+
+      if (!response.ok) {
+        throw new Error(json.message || "Failed to submit form");
+      }
 
       toast({ title: "Message sent!", description: "We'll get back to you within 24 hours." });
       setForm({ name: "", email: "", message: "", service: "" });
-    } catch {
+    } catch (error) {
+      console.error(error);
       toast({ title: "Something went wrong", description: "Please try again later.", variant: "destructive" });
     } finally {
       setLoading(false);
