@@ -11,9 +11,9 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <a href="#home" className="font-display text-2xl font-bold tracking-tight">
-              <span className="gradient-text">Azu</span>
-              <span className="text-foreground">pax</span>
+            <a href="#home" className="flex items-center gap-3 font-display text-2xl font-bold tracking-tight">
+              <img src="/logo.png" alt="Azpax Logo" className="h-14 w-auto object-contain" />
+              <span className="text-foreground">Azpax</span>
             </a>
             <p className="text-muted-foreground text-sm mt-3 leading-relaxed">
               Where Digital Meets Precision
@@ -60,7 +60,7 @@ const Footer = () => {
 
         <div className="border-t border-border pt-8 text-center">
           <p className="text-muted-foreground text-xs">
-            © 2026 Azupax. All rights reserved.
+            © 2026 Azpax. All rights reserved.
           </p>
         </div>
       </div>

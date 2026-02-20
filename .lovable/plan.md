@@ -1,6 +1,6 @@
 
 
-# Azupax — Premium Digital Agency Website
+# Azpax — Premium Digital Agency Website
 
 ## Overview
 A single-page, dark & bold agency website with smooth scroll navigation, striking typography, and a working contact form powered by Lovable Cloud.
@@ -51,7 +51,7 @@ A single-page, dark & bold agency website with smooth scroll navigation, strikin
 - "Send Message" CTA button
 
 ## 8. Footer
-- Logo + slogan: "Azupax — Where Digital Meets Precision"
+- Logo + slogan: "Azpax — Where Digital Meets Precision"
 - Quick links: Home, Services, Portfolio, Contact
 - Social media icon links (Instagram, LinkedIn, X, Behance)
 - Copyright line

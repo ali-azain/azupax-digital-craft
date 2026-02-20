@@ -1,101 +1,90 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { Lightbulb, Target, TrendingUp } from "lucide-react";
-
-const values = [
-  {
-    icon: Lightbulb,
-    title: "Creativity",
-    description: "We push boundaries to create unique, visually striking experiences.",
-  },
-  {
-    icon: Target,
-    title: "Precision",
-    description: "Every detail matters — from typography to interaction design.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Results",
-    description: "We focus on impact, performance, and measurable growth.",
-  },
-];
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay: i * 0.15 },
-  }),
-};
 
 const AboutSection = () => {
   return (
-    <section id="about" className="section-padding">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-2 gap-16 items-center mb-20"
-        >
-          <motion.div variants={fadeUp} custom={0}>
-            <p className="text-primary text-sm font-medium tracking-widest uppercase mb-4">About Us</p>
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              We Are <span className="gradient-text">Azupax</span>
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Azupax is a modern digital agency that specializes in building premium websites, creating compelling brand identities, and managing impactful social media campaigns.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Our team is a fusion of designers, strategists, and creative thinkers who thrive on solving complex challenges with elegant solutions. We don't just design; we craft experiences that resonate with your audience and deliver measurable results.
-            </p>
-          </motion.div>
+    <section id="about" className="py-24 bg-transparent relative">
+      {/* Background glow in center */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -z-10" />
 
-          {/* Visual element */}
-          <motion.div variants={fadeUp} custom={1} className="relative">
-            <div className="aspect-square rounded-2xl bg-secondary border border-border overflow-hidden relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
-              <div className="absolute top-8 left-8 right-8 bottom-8 border border-primary/20 rounded-xl" />
-              <div className="absolute top-16 left-16 right-16 bottom-16 border border-primary/10 rounded-lg" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-display text-6xl font-bold gradient-text text-glow">A</span>
-              </div>
-            </div>
-          </motion.div>
+      <div className="container mx-auto px-6">
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <p className="text-sm font-medium text-primary mb-2 uppercase tracking-wider">Our Intention</p>
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+            We build digital <br />
+            with <span className="text-white/80">intention.</span>
+          </h2>
         </motion.div>
 
-        {/* Core values */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-3 gap-6"
-        >
-          {values.map((v, i) => (
-            <motion.div
-              key={v.title}
-              variants={fadeUp}
-              custom={i}
-              className="group p-8 rounded-2xl bg-card border border-border hover:card-glow transition-all duration-500"
-            >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
-                <v.icon className="text-primary" size={24} />
-              </div>
-              <h3 className="font-display text-xl font-semibold mb-3">{v.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{v.description}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {/* Card 1: Our Story */}
+          <motion.div
+            initial={{ y: 40, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <Card className="bg-card border-white/5 hover:border-primary/20 transition-all duration-300 group overflow-hidden h-full">
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-black transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></svg>
+                </div>
+                <CardTitle className="text-2xl font-display text-white">Our story</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-white/60 leading-relaxed mb-6">
+                  Azpax began in 2024. Then, simple, but dedicated. Since then, we've grown into a diverse team of digital strategists, developers, and designers. We build with clarity, precision, and passion.
+                </p>
+                <p className="text-white/60 leading-relaxed mb-6">
+                  Now, we're helping brands across the globe realize their vision. We treat every project not just as a contract, but as a partnership.
+                </p>
+                <a href="#read-more" className="inline-flex items-center text-primary text-sm font-medium hover:underline">
+                  Read full story <ArrowRight className="ml-1 w-4 h-4" />
+                </a>
+              </CardContent>
+            </Card>
+          </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-muted-foreground text-center max-w-2xl mx-auto mt-16 leading-relaxed"
-        >
-          Whether you're a startup looking to make your mark or an established brand seeking to evolve, Azupax partners with you to elevate your digital presence.
-        </motion.p>
+          {/* Card 2: What we do */}
+          <motion.div
+            initial={{ y: 40, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <Card className="bg-card border-white/5 hover:border-primary/20 transition-all duration-300 group overflow-hidden h-full">
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-black transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2" /><polyline points="2 17 12 22 22 17" /><polyline points="2 12 12 17 22 12" /></svg>
+                </div>
+                <CardTitle className="text-2xl font-display text-white">What we do</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-white/60 leading-relaxed mb-6">
+                  Full-stack development, engagement, and design. Complex problems demand elegant solutions. We make solutions that drive results.
+                </p>
+                <p className="text-white/60 leading-relaxed mb-6">
+                  From 0 to 1, we take the lead.
+                </p>
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {['Web', 'Mobile', 'Design', 'Strategy', 'SEO'].map((tag) => (
+                    <Badge key={tag} variant="secondary" className="bg-white/5 text-white/80 hover:bg-white/10 border-transparent">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
