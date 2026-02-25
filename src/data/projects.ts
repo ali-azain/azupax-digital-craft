@@ -14,7 +14,7 @@ export const projects = [
         type: "website",
         image: "/socialstream.png",
         description: "A unified dashboard to schedule, manage, and publish content across multiple social platforms.",
-        link: "https://ali-azain.github.io/social-stream-dashboard/"
+        link: "https://ali-azain.github.io/build-your-vision/"
     },
     {
         title: "Earlybuild GmbH",
